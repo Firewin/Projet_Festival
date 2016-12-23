@@ -1,0 +1,78 @@
+.centrer {text-align: center;}
+.txtGras{font-weight:bold;}
+.txtOrange { color:orange; }
+.txtRouge{color:red;}
+
+html { 
+  background: url('admin/images/background.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  
+}
+
+nav {
+    background-color:#000000;
+}
+
+input {
+    color: orange;
+}
+
+select {
+    color: orange;
+}
+
+footer {
+    clear:both; 
+    color:#FFFFFF;
+    width:80%;
+    margin:0 auto; 
+    text-align:center;
+    padding-right:15px;
+    padding-top:1%;
+}
+
+#main{
+    
+    background-color:#000000;
+    color: white;
+    
+}
+
+#main h2 {
+    color: white;
+}
+
+#menu, #menu ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background-color:#000000;
+}
+#menu {
+    /* on centre le menu dans la page */
+    text-align: center;
+    padding:10px;
+    margin:auto;
+    background-color:#000000;
+
+}
+#menu li {
+    /* on place les liens du menu horizontalement */
+    display: table;
+    background-color:#000000;
+    
+}
+
+#menu a {
+    text-decoration: none;
+    display: block;
+    margin: 0 30px;
+    font-family:Verdana;
+    text-align:center;
+    color:white;
+}
+
+
