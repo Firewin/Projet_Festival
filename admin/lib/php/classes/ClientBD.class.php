@@ -24,13 +24,13 @@ class ClientBD {
         try {
             $query = "select ajout_client(:nom,:prenom,:pays,:adresse,:email,:telephone,:password) as retour";
             $sql = $this->_db->prepare($query);
-            $sql->bindValue(':nom', $_POST['nom']);
-            $sql->bindValue(':prenom', $_POST['prenom']);
-            $sql->bindValue(':pays', $_POST['pays']);
-            $sql->bindValue(':adresse', $_POST['adresse']);
-            $sql->bindValue(':email', $_POST['email']);
-            $sql->bindValue(':telephone', $_POST['telephone']);
-            $sql->bindValue(':password', $_POST['password']);
+            $sql->bindValue(':nom', $nom);
+            $sql->bindValue(':prenom', $prenom);
+            $sql->bindValue(':pays', $pays);
+            $sql->bindValue(':adresse', $adresse);
+            $sql->bindValue(':email', $email);
+            $sql->bindValue(':telephone', $telephone);
+            $sql->bindValue(':password', $password);
             $sql->execute();
             $retour = $sql->fetchColumn(0);
         } catch (PDOException $e) {

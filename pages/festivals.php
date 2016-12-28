@@ -55,7 +55,7 @@ if (isset($liste_fp)) {
 
                     <div>
                         <h3 class="nom_fest"><?php
-                            print utf8_encode($liste_f[$i]->nom);
+                            print utf8_encode($liste_f[$i]->titre);
                             ?></h3>
 
                         <div class="detail_fest">
@@ -67,7 +67,7 @@ if (isset($liste_fp)) {
                             print ('<br/>Description : ');
                             print $liste_f[$i]->description;
                             ?>
-                            <a class="txtOrange txtGras" href ="./index.php?id_fest=<?php print $liste_f[$i]->id_fest; ?>&page=ticket">
+                            <a class="txtOrange txtGras" href ="./index.php?id_fest=<?php print $liste_f[$i]->id_fest; ?>&page=<?php if(isset($_SESSION['client'])) { print 'ticket_session'; } else{ print 'ticket'; } ?>">
                                 Acheter ici !
                             </a>
                         </div>

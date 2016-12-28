@@ -61,7 +61,7 @@ session_start();
             <section id="main">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h2>Bienvenue chez Festif'Consult</h2>
+                        <h2>Bienvenue chez Festif'Consult(Partie Administrative)</h2>
                     </div>
                 </div>
                 <?php

@@ -2,5 +2,5 @@
 
 $dsn = 'pgsql:host=localhost;dbname=projet_festival;port=5432';
 $user = 'postgres';
-$pass = 'oracle';
+$pass = 'kapout12';
 ?>

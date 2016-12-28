@@ -19,7 +19,11 @@ $('document').ready(function () {
                     $("#pays_com").val(data[0].pays);
                     $("#adresse_com").val(data[0].adresse);
                     $("#telephone_com").val(data[0].telephone);
-
+                    $("#id_cli").val(data[0].id_cli);
+                    $("#password_com2").val(data[0].password);
+                    $("#detail_confirm_com").remove();
+                    $("#password_com2").hide();  
+                    $("#confirm_com").show();
 
 
                     console.log(data[0].nom);

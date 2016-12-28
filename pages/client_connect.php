@@ -4,12 +4,11 @@ if (isset($_POST['submit_email'])) {
     $retour = $log->isClient($_POST['email'], $_POST['password']);
     var_dump($retour);
     if ($retour != 0) {
-        $_SESSION['client'] = $retour;
-        creationPanier();
+        $_SESSION['client'] = $retour;        
         $message = "Authentifié!";
         print "message : " . $message;
 ?>
-        <meta http-equiv="refresh" content="10;url=http://localhost/projects/Projet_Festival/index.php?page=accueil" />
+        <meta http-equiv="refresh" content="1;url=http://localhost/projects/Projet_Festival/index.php?page=accueil" />
 <?php
     } else {
         $message = "Données incorrectes";

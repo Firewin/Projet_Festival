@@ -4,15 +4,15 @@ if (isset($_POST['submit'])) {
     $data = new ClientBD($cnx);
     $retour = $data->ajoutClient($_POST['nom'], $_POST['prenom'], $_POST['pays'], $_POST['adresse'], $_POST['email'], $_POST['telephone'], $_POST['password']);
     var_dump($retour);
-    if ($retour == 1) {
-        $message = "Inscrit!";
+    if ($retour == -1) {
+        $message = "Erreur";
         print "message : " . $message;
     } else {
-        if ($retour == 2) {
+        if ($retour == -2) {
             $message = "Deja nscrit";
             print "message : " . $message;
         } else {
-            $message = "Erreur";
+            $message = "Inscrit!";
             print "message : " . $message;
         }
     }
@@ -39,15 +39,15 @@ if (isset($_POST['submit'])) {
         </tr>
         <tr>
             <td class="centrer"><label>Email</label></td>
-            <td class="centrer"><input type="text" name="email1" id="email1"/></td>
+            <td class="centrer"><input type="text" name="email1" id="email1" placeholder="aaa@aaa.aa"/></td>
         </tr>
         <tr>
             <td class="centrer"><label>Confirmez Email</label></td>
-            <td class="centrer"><input type="text" name="email2" id="email2"/></td>
+            <td class="centrer"><input type="text" name="email2" id="email2" placeholder="aaa@aaa.aa"/></td>
         </tr>
         <tr>
             <td class="centrer"><label>Telephone</label></td>
-            <td class="centrer"><input type="text" name="telephone" id="telephone"/></td>
+            <td class="centrer"><input type="text" name="telephone" id="telephone" placeholder="xxx/xx.xx.xx"/></td>
         </tr>
         <tr>
             <td class="centrer"><label>Password</label></td>

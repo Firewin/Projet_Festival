@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    //$('.description-ticket').hide();
+    $('#confirm_com').hide();
     $('#submit_duree').remove();
     $('#choix_duree').change(function () {
         var param = $(this).attr('name');

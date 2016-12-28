@@ -18,3 +18,11 @@ function ajouterArticle($id_fest) {
     }
 }
 
+function viderPanier() {
+
+    if (creationPanier()) {
+        $_SESSION['panier'] = null;
+    } else {
+        echo "Un problème est survenu veuillez contacter l'administrateur du site.";
+    }
+}
