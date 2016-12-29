@@ -17,7 +17,7 @@ session_start();
         <script src="lib/css/bootstrap-3.3.7/dist/js/bootstrap.js" type="text/javascript"></script>
         <script src="lib/js/functionsJqueryVal.js" type="text/javascript"></script>
         <script src="lib/js/functionsDetailsFest.js" type="text/javascript"></script>
-        <script src="lib/js/functionsDetailCom.js" type="text/javascript"></script>
+        <script src="lib/js/functionsConsultCom.js" type="text/javascript"></script>
         <script src="lib/js/functionsJqueryAdmin.js" type="text/javascript"></script>
         <meta charset='UTF-8'/>
     </head>

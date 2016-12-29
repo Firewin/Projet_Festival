@@ -1,10 +1,15 @@
 <?php
+$fest = new FestivalBD($cnx);
+
 if (isset($_GET['submit_pays'])) {
     extract($_GET, EXTR_OVERWRITE);
     if ($choix_pays != 1) {
         $liste_fp = $fest->getFestivalbyPays($choix_pays);
         $nbrF = count($liste_fp);
     }
+} else {
+    $liste_f = $fest->getFestival();
+    $nbrF = count($liste_f);
 }
 
 if (isset($_GET['delete'])) {
@@ -44,7 +49,7 @@ if (isset($_FILES['image_f']) AND $_FILES['image_f']['error'] == 0) {
 }
 
 if (isset($_POST['save_modif'])) {
-    print 'ii'.$path_image;
+    print 'ii' . $path_image;
     if (!isset($path_image)) {
         $path_image = $_POST['path'];
     }
@@ -56,13 +61,8 @@ if (isset($_POST['save_modif'])) {
     } else {
         $message = 'erreur';
         print 'Message : ' . $message;
-        
     }
 }
-
-$fest = new FestivalBD($cnx);
-$liste_f = $fest->getFestival();
-$nbrF = count($liste_f);
 
 $liste_p = $fest->getPays();
 $nbrP = count($liste_p);
@@ -75,15 +75,15 @@ $nbrP = count($liste_p);
         <div class="col-sm-3">
             <select name="choix_pays" id="choix_pays">
                 <option value="1">Choisissez</option>
-                <?php
-                for ($i = 0; $i < $nbrP; $i++) {
-                    ?>                    
+<?php
+for ($i = 0; $i < $nbrP; $i++) {
+    ?>                    
                     <option value="<?php print $liste_p[$i]->pays; ?>">
-                        <?php print $liste_p[$i]->pays; ?>
+                    <?php print $liste_p[$i]->pays; ?>
                     </option>
-                    <?php
-                }
-                ?>
+                        <?php
+                    }
+                    ?>
             </select>
 
         </div>
@@ -102,17 +102,17 @@ if (isset($liste_fp)) {
 ?>
 <div class="row">
     <div class="col-sm-12">
-        <?php
-        for ($i = 0; $i < $nbrF; $i++) {
-            ?>
+<?php
+for ($i = 0; $i < $nbrF; $i++) {
+    ?>
             <img class=img-responsive src="<?php print $liste_f[$i]->image_fest; ?>" alt="ImageFest">
             <div class="row">
                 <div class="col-sm-6 col-sm-push-3">
 
                     <div>
                         <h3 class="nom_fest"><?php
-                            print $liste_f[$i]->titre;
-                            ?></h3>
+        print $liste_f[$i]->titre;
+        ?></h3>
                         <div class="detail_fest">
                             <form method="get" name="supp_fest" action="<?php print $_SERVER['PHP_SELF']; ?>">
                                 <div class="row">
@@ -170,9 +170,9 @@ if (isset($liste_fp)) {
                     </div>
                 </div> 
             </div>
-            <?php
-        }
-        ?>
+    <?php
+}
+?>
 
     </div> 
 </div>   

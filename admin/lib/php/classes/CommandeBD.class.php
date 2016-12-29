@@ -14,6 +14,7 @@ class CommandeBD {
     private $_db;
     private $_commande = array();
     private $_variable = "valeur";
+    private $_infoArray = array();
 
     public function __construct($cnx) {
         $this->_db = $cnx;
@@ -40,4 +41,50 @@ class CommandeBD {
         }
         return $_commande;
     }
+    
+        public function getCommande() {
+        try {
+            $query = "SELECT * FROM commande";
+            $resultset = $this->_db->prepare($query);
+            $resultset->execute();
+            $data = $resultset->fetchAll();
+
+            $resultset->execute();
+        } catch (PDOException $e) {
+            print $e->getMessage();
+        }
+
+        while ($data = $resultset->fetch()) {
+            try {
+                $_infoArray[] = new Festival($data);
+            } catch (PDOException $e) {
+                print $e->getMessage();
+            }
+        }
+        return $_infoArray;
+    }
+    
+            public function getCommandebyFest($titre) {
+        try {
+            $query = "SELECT * FROM commande where titre=:titre";
+            $resultset = $this->_db->prepare($query);
+            $resultset->bindValue(':titre', $titre);
+            $resultset->execute();
+            $data = $resultset->fetchAll();
+
+            $resultset->execute();
+        } catch (PDOException $e) {
+            print $e->getMessage();
+        }
+
+        while ($data = $resultset->fetch()) {
+            try {
+                $_infoArray[] = new Festival($data);
+            } catch (PDOException $e) {
+                print $e->getMessage();
+            }
+        }
+        return $_infoArray;
+    }
+    
 }

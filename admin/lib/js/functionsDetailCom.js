@@ -11,4 +11,6 @@ $(document).ready(function () {
         $('.description-ticket').show();
         location.href = url;
     });
+    
+
 });
