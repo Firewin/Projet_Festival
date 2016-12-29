@@ -49,7 +49,7 @@ if (isset($liste_fp)) {
         <?php
         for ($i = 0; $i < $nbrF; $i++) {
             ?>
-            <img class=img-responsive src="<?php print $liste_f[$i]->image_fest; ?>" alt="ImageFest">
+            <img class=img-responsive src="<?php print 'admin/'.$liste_f[$i]->image_fest; ?>" alt="ImageFest">
             <div class="row">
                 <div class="col-sm-6 col-sm-push-3">
 

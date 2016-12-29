@@ -2,7 +2,7 @@
 .txtGras{font-weight:bold;}
 .txtOrange { color:orange; }
 .txtRouge{color:red;}
-
+.txtGrasOrange{font-weight:bold;color:orange;}
 html { 
   background: url('admin/images/background.jpg') no-repeat center center fixed; 
   -webkit-background-size: cover;

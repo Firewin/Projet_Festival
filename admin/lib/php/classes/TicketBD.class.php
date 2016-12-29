@@ -44,4 +44,25 @@ class TicketBD {
         }
         return $_infoArray;
     }
+    
+        public function ajoutTicket($id_f, $description, $prix, $type) {
+        $retour = array();
+        try {
+            $query = "INSERT INTO ticket (id_f, description, prix, type) VALUES (:id_f,:description,:prix,:type)";
+            $sql = $this->_db->prepare($query);
+            $sql->bindValue(':id_f', $id_f);
+            $sql->bindValue(':description', $description);
+            $sql->bindValue(':prix', $prix);
+            $sql->bindValue(':type', $type);
+            $sql->execute();
+            $retour = $sql->fetchColumn(0);
+        } catch (PDOException $e) {
+            print "Echec de la requ&ecirc;te." . $e;
+        }
+        return $retour;
+    }
+
+    public function __toString() {
+        return $this->_variable . " " . $this->_db;
+    }
 }

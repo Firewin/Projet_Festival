@@ -18,4 +18,9 @@ $(document).ready(function () {
             $(this).parent().find(".detail_fest").toggle();
         });
     });
+    
+
+
 });
+
+
