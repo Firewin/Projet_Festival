@@ -3,14 +3,16 @@ unset($_SESSION['client']);
 unset($_SESSION['panier']);
 if (isset($_POST['submit_login'])) {
     print "ici";
-   $log = new AdminBD($cnx);
+    $log = new AdminBD($cnx);
     $retour = $log->isAdmin($_POST['login'], $_POST['password']);
     var_dump($retour);
     if ($retour == 1) {
         $_SESSION['admin'] = 1;
         $message = "Authentifié!";
         print "message : " . $message;
-        header('Location: http://localhost/projects/Projet_Festival/admin/index.php');
+        ?>
+        <meta http-equiv="refresh" content="1;url=http://localhost/projects/Projet_Festival/admin/index.php?page=accueil_admin" />
+        <?php
     } else {
         $message = "Données incorrectes";
     }
@@ -24,11 +26,11 @@ if (isset($_POST['submit_login'])) {
             <div class="col-sm-offset-1 txt150">Authentifiez-vous<br/><br/></div>
         </div>
         <div class="row">
-            <div class="col-sm-2 txtRouge txtGras">Login : </div>
+            <div class="col-sm-2">Login : </div>
             <div class="col-sm-4"><input type="text" id="login_" name="login" /></div><br/><br/>
         </div>
         <div class="row">
-            <div class="col-sm-2 txtRouge txtGras">Mot de passe :</div>
+            <div class="col-sm-2">Mot de passe :</div>
             <div class="col-sm-4"><input type="password" id="password_" name="password" /></div>
         </div>
         <div class="row">

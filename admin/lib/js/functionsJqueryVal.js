@@ -25,6 +25,7 @@ $(document).ready(function () {
                 regex: /^(0)[0-9]{1,2}\/[0-9]{2}\.[0-9]{2}\.[0-9]{2}$/
             },
             password: "required",
+            password2: "required",
             submitHandler: function (form) {
                 form.submit();
             }
@@ -51,6 +52,35 @@ $(document).ready(function () {
             },
             password_com: "required",
             password_com2: "required",
+            submitHandler: function (form) {
+                form.submit();
+            }
+        }
+    });
+    
+    $("#form_ajout_f").validate({
+        rules: {
+            ajout_titre: "required",
+            ajout_pays: "required",
+            ajout_date_f: "required",
+            ajout_description: "required",
+            ajout_image_f: "required",
+            ajout_prix1: "required",
+            ajout_description_t1: "required",
+            ajout_prix2: "required",
+            ajout_description_t2: "required",
+            submitHandler: function (form) {
+                form.submit();
+            }
+        }
+    });
+    
+    $("#form_update_f").validate({
+        rules: {
+            titre: "required",
+            pays: "required",
+            date_f: "required",
+            description: "required",
             submitHandler: function (form) {
                 form.submit();
             }

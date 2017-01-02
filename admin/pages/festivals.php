@@ -5,11 +5,8 @@ if (isset($_GET['submit_pays'])) {
     extract($_GET, EXTR_OVERWRITE);
     if ($choix_pays != 1) {
         $liste_fp = $fest->getFestivalbyPays($choix_pays);
-        $nbrF = count($liste_fp);
+        $nbrFp = count($liste_fp);
     }
-} else {
-    $liste_f = $fest->getFestival();
-    $nbrF = count($liste_f);
 }
 
 if (isset($_GET['delete'])) {
@@ -49,7 +46,6 @@ if (isset($_FILES['image_f']) AND $_FILES['image_f']['error'] == 0) {
 }
 
 if (isset($_POST['save_modif'])) {
-    print 'ii' . $path_image;
     if (!isset($path_image)) {
         $path_image = $_POST['path'];
     }
@@ -63,7 +59,8 @@ if (isset($_POST['save_modif'])) {
         print 'Message : ' . $message;
     }
 }
-
+$liste_f = $fest->getFestival();
+$nbrF = count($liste_f);
 $liste_p = $fest->getPays();
 $nbrP = count($liste_p);
 ?>
@@ -98,6 +95,7 @@ for ($i = 0; $i < $nbrP; $i++) {
 <?php
 if (isset($liste_fp)) {
     $liste_f = $liste_fp;
+    $nbrF = $nbrFp;
 }
 ?>
 <div class="row">

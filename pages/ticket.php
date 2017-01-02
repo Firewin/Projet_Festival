@@ -22,6 +22,7 @@ if (isset($_GET['submit_duree'])) {
     }
 }
 if (isset($_POST['submit_commande'])) {
+
     if ($_POST['password_com'] == $_POST['password_com2']) {
         $id_cli = $_POST['id_cli'];
         $id_ticket = $_POST['id_ticket'];
@@ -48,7 +49,7 @@ if ($flag) {
     ?>
     <div class="container">
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-5">
                 <div class="container">
                     <span class="txtGras">Votre commande : </span>
                     <div>
@@ -86,7 +87,7 @@ if ($flag) {
                     </form>
                 </div>
             </div>
-            <div class="col-sm-8">
+            <div class="col-sm-7">
                 <div class="container">
 
                     <form action="<?php print $_SERVER['PHP_SELF']; ?>" method="post" id="form_commande" class="form-horizontal">

@@ -46,40 +46,48 @@ if (isset($liste_fcom)) {
     $liste_com = $liste_fcom;
 }
 ?>
-<div class="container">
-    <?php
-    for ($i = 0; $i < $nbr; $i++) {
-        ?>
-        <div class="row">
-            <div class="col-sm-1">
-                <span class="txtGras"><?php print $liste_com[$i]->id_achat; ?></span>
-            </div>
-            <div class="col-sm-1">
-                <span class="txtGras"><?php print $liste_com[$i]->id_cli; ?></span>
-            </div>
-            <div class="col-sm-1">
-                <span class="txtGras"><?php print $liste_com[$i]->nom; ?></span>
-            </div>
-            <div class="col-sm-1">
-                <span class="txtGras"><?php print $liste_com[$i]->prenom; ?></span>
-            </div>
-            <div class="col-sm-2">
-                <span class="txtGras"><?php print $liste_com[$i]->email; ?></span>
-            </div>
-            <div class="col-sm-2">
-                <span class="txtGras"><?php print $liste_com[$i]->titre; ?></span>
-            </div>
-            <div class="col-sm-2">
-                <span class="txtGras"><?php print $liste_com[$i]->description; ?></span>
-            </div>
-            <div class="col-sm-1">
-                <span class="txtGras"><?php print $liste_com[$i]->quantite; ?></span>
-            </div>
-            <div class="col-sm-1">
-                <span class="txtGras"><?php print $liste_com[$i]->prix_total; ?></span>
-            </div>
-        </div>   
+<div class="table-responsive">
+    <table class="table">   
+        <tr>
+            <td><span class="txtGras">Numéro de commande</span></td>
+
+            <td><span class="txtGras">Numéro de client</span></td>
+
+            <td><span class="txtGras">Nom</span></td>
+
+            <td><span class="txtGras">Prénom</span></td>
+
+            <td><span class="txtGras">Email</span></td>
+
+            <td><span class="txtGras">Festival</span></td>
+
+            <td><span class="txtGras">Quantité</span></td>
+
+            <td><span class="txtGras">Prix total</span></td>
+        </tr>
         <?php
-    }
-    ?>
+        for ($i = 0; $i < $nbr; $i++) {
+            ?>
+            <tr>
+                <td><span class="txtGras"><?php print $liste_com[$i]->id_achat; ?></span></td>
+
+                <td><span class="txtGras"><?php print $liste_com[$i]->id_cli; ?></span></td>
+
+                <td><span class="txtGras"><?php print $liste_com[$i]->nom; ?></span></td>
+
+                <td><span class="txtGras"><?php print $liste_com[$i]->prenom; ?></span></td>
+
+                <td><span class="txtGras"><?php print $liste_com[$i]->email; ?></span></td>
+
+                <td><span class="txtGras"><?php print $liste_com[$i]->titre; ?></span></td>
+
+                <td><span class="txtGras"><?php print $liste_com[$i]->quantite; ?></span></td>
+
+                <td><span class="txtGras"><?php print $liste_com[$i]->prix_total; ?></span></td>
+            </tr>
+
+            <?php
+        }
+        ?>
+    </table>  
 </div>
