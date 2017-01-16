@@ -2,11 +2,7 @@
 include ('./admin/lib/php/adm_liste_include.php');
 $cnx = Connexion::getInstance($dsn, $user, $pass);
 $com = new CommandeBD($cnx);
-$_commande = $com->getLastCommande();
-/*$print $_commande[0]->id_achat;
-print $_commande[0]->nom;
-print $_commande[0]->prenom
-print $_commande[0]->email;*/
+$_commande = $com->getCommande_byNum($_GET['id_com']);
 $pdf = new PDF();
 $pdf->AliasNbPages();
 $pdf->AddPage();

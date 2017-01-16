@@ -21,8 +21,6 @@ if (isset($_FILES['ajout_image_f']) AND $_FILES['ajout_image_f']['error'] == 0) 
             $path_image = $dossier . $fichier;
         }
     }
-}else {
-    print 'Erreur';
 }
 
 

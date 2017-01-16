@@ -43,7 +43,9 @@ if (isset($_POST['submit_commande'])) {
     $flag = false;
     $message = "Achat confirmer";
     print "message : " . $message;
-    print '</br><a href="http://localhost/projects/Projet_Festival/pdf_commande.php" targer="_blank">Téléchargez votre bon de commande</a>';
+    ?>
+    </br><a href="http://localhost/projects/Projet_Festival/pdf_commande.php?id_com=<?php print $num_com; ?>">Téléchargez votre bon de commande</a>
+    <?php
 }
 
 if ($flag) {
@@ -52,7 +54,7 @@ if ($flag) {
         <div class="col-sm-4">
             <span class="txtGras">Votre commande : </span>
             <div>
-                <span class="txtGras">Entrée pour <?php print $liste_f[0]->nom; ?></span>
+                <span class="txtGras">Entrée pour <?php print $liste_f[0]->titre; ?></span>
             </div>
         </div>
         <div class="col-sm-4">

@@ -38,7 +38,7 @@ if (isset($_POST['submit_commande'])) {
         $message = "Achat confirmer";
         print "message : " . $message;
         ?>
-        </br><a href="http://localhost/projects/Projet_Festival/pdf_commande.php" targer="_blank">Téléchargez votre bon de commande</a>
+        </br><a href="http://localhost/projects/Projet_Festival/pdf_commande.php?id_com=<?php print $num_com;?>">Téléchargez votre bon de commande</a>
         <?php
     } else {
         $message = "Erreur de mot de passe";

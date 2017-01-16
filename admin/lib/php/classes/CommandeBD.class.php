@@ -19,11 +19,12 @@ class CommandeBD {
     public function __construct($cnx) {
         $this->_db = $cnx;
     }
-    public function getLastCommande() {
+    public function getCommande_byNum($num_com) {
 
         try {
-            $query = "select * from commande where id_achat = (Select max(id_achat) from commande)";
+            $query = "select * from commande where id_achat = :num_com";
             $resultset = $this->_db->prepare($query);
+            $resultset->bindValue(1, $num_com);
             $resultset->execute();
             $data = $resultset->fetchAll();
 

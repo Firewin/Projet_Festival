@@ -1,6 +1,3 @@
-/**
- * Created by Romain on 12-12-16.
- */
 $('document').ready(function () {
     $("#email2_com").blur(function () {
         var email1 = $("#email1_com").val();

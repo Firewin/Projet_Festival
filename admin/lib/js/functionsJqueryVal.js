@@ -65,9 +65,15 @@ $(document).ready(function () {
             ajout_date_f: "required",
             ajout_description: "required",
             ajout_image_f: "required",
-            ajout_prix1: "required",
+            ajout_prix1: {
+                required: true,
+                number: true
+            },
             ajout_description_t1: "required",
-            ajout_prix2: "required",
+            ajout_prix2: {
+                required: true,
+                number: true
+            },
             ajout_description_t2: "required",
             submitHandler: function (form) {
                 form.submit();
